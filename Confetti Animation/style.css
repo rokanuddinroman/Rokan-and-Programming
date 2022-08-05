@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+button {
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+    color: #fff;
+    background-color: #18e1ff;
+    padding: 6px 14px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+span {
+    display: grid;
+    place-content: center;
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+}
+
+button {
+    display: flex;
+    align-items: center;
+}
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.svg {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}

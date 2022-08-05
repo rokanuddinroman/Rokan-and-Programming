@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confetti</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="container">
+        <button>
+            <div><span><i class='bx bx-play'></i></span></div>
+            Play
+        </button>
+        <div class="svg" id="svg"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
+        integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script.js"></script>
+    <script>
+        const play = document.querySelector('button')
+        const svgContainer = document.getElementById('svg')
+
+        const animItem = bodymovin.loadAnimation({
+            wrapper: svgContainer,
+            animType: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'https://assets9.lottiefiles.com/packages/lf20_rovf9gzu.json'
+        });
+
+        play.addEventListener('click', () => {
+            animItem.goToAndPlay(0, true);
+        })
+    </script>
+
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+</body>
+
+</html>
